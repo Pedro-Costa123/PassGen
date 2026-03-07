@@ -26,6 +26,7 @@
     "@angular/cli": "^21.2.1",
     "@angular/compiler-cli": "^21.2.1",
     "@types/node": "^18.18.0",
+    "angular-cli-ghpages": "^3.0.2",
     "typescript": "~5.9.3"
   }
 }
