@@ -1,30 +1,30 @@
-import { Injectable } from '@angular/core';
-import { PasswordOptions } from '../models/password-options.model';
+import { Injectable } from "@angular/core";
+import { PasswordOptions } from "../models/password-options.model";
 
-const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
-const NUMBERS = '0123456789';
-const SPECIAL = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
+const NUMBERS = "0123456789";
+const SPECIAL = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class PasswordService {
   /**
    * Builds the character pool from selected options, removing ignored characters.
    * Returns an empty string if the pool is empty after filtering.
    */
   buildCharPool(options: PasswordOptions): string {
-    let pool = '';
+    let pool = "";
     if (options.includeUppercase) pool += UPPERCASE;
     if (options.includeLowercase) pool += LOWERCASE;
     if (options.includeNumbers) pool += NUMBERS;
     if (options.includeSpecial) pool += SPECIAL;
 
     if (options.ignoreChars) {
-      const ignoreSet = new Set(options.ignoreChars.split(''));
+      const ignoreSet = new Set(options.ignoreChars.split(""));
       pool = pool
-        .split('')
+        .split("")
         .filter((c) => !ignoreSet.has(c))
-        .join('');
+        .join("");
     }
 
     return pool;
@@ -42,6 +42,6 @@ export class PasswordService {
     const bytes = new Uint32Array(options.length);
     crypto.getRandomValues(bytes);
 
-    return Array.from(bytes, (v) => pool[v % pool.length]).join('');
+    return Array.from(bytes, (v) => pool[v % pool.length]).join("");
   }
 }

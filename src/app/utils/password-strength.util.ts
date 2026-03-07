@@ -1,4 +1,4 @@
-import { PasswordStrength } from '../models/password-strength.model';
+import { PasswordStrength } from "../models/password-strength.model";
 
 /**
  * Calculates password strength based on length and character diversity.
@@ -11,7 +11,7 @@ import { PasswordStrength } from '../models/password-strength.model';
  *   0-1 → weak | 2-3 → moderate | 4-5 → strong | 6+ → very-strong
  */
 export function calculateStrength(password: string): PasswordStrength {
-  if (!password || password.length < 4) return 'weak';
+  if (!password || password.length < 4) return "weak";
 
   const len = password.length;
   let score = 0;
@@ -29,18 +29,18 @@ export function calculateStrength(password: string): PasswordStrength {
   if (/[^A-Za-z0-9]/.test(password)) diversity++;
   score += Math.max(0, diversity - 1);
 
-  if (score >= 6) return 'very-strong';
-  if (score >= 4) return 'strong';
-  if (score >= 2) return 'moderate';
-  return 'weak';
+  if (score >= 6) return "very-strong";
+  if (score >= 4) return "strong";
+  if (score >= 2) return "moderate";
+  return "weak";
 }
 
 export function getStrengthLabel(strength: PasswordStrength): string {
   const labels: Record<PasswordStrength, string> = {
-    weak: 'Weak',
-    moderate: 'Moderate',
-    strong: 'Strong',
-    'very-strong': 'Very Strong',
+    weak: "Weak",
+    moderate: "Moderate",
+    strong: "Strong",
+    "very-strong": "Very Strong",
   };
   return labels[strength];
 }
@@ -50,7 +50,7 @@ export function getStrengthPercent(strength: PasswordStrength): number {
     weak: 25,
     moderate: 50,
     strong: 75,
-    'very-strong': 100,
+    "very-strong": 100,
   };
   return percents[strength];
 }
