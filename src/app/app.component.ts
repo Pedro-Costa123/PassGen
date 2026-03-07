@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { PasswordGeneratorComponent } from './components/password-generator/password-generator.component';
+import { Component } from "@angular/core";
+import { PasswordGeneratorComponent } from "./components/password-generator/password-generator.component";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
   imports: [PasswordGeneratorComponent],
   template: `<app-password-generator />`,

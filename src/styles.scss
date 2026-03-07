@@ -5,8 +5,8 @@
   --radius-lg: 20px;
   --radius-xl: 28px;
 
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
 
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
@@ -54,9 +54,12 @@
   --strength-very-strong: #2563eb;
   --strength-very-strong-subtle: rgba(37, 99, 235, 0.12);
 
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 10px 40px rgba(15, 23, 42, 0.1), 0 4px 16px rgba(15, 23, 42, 0.06);
+  --shadow-sm:
+    0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md:
+    0 4px 16px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-lg:
+    0 10px 40px rgba(15, 23, 42, 0.1), 0 4px 16px rgba(15, 23, 42, 0.06);
   --shadow-accent: 0 4px 20px rgba(37, 99, 235, 0.35);
 
   --header-bg: rgba(255, 255, 255, 0.85);
@@ -172,7 +175,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* ---------- Typography Utilities ---------- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.3;
   letter-spacing: -0.02em;
 }
