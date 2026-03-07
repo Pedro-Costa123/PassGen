@@ -6,11 +6,3 @@ export interface PasswordOptions {
   includeSpecial: boolean;
   ignoreChars: string;
 }
-
-export type PasswordStrength = 'weak' | 'moderate' | 'strong' | 'very-strong';
-
-export interface PasswordHistoryEntry {
-  password: string;
-  timestamp: Date;
-  strength: PasswordStrength;
-}

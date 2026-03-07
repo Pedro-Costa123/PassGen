@@ -3,12 +3,14 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 
 import { PasswordService } from '../../services/password.service';
 import { ThemeService } from '../../services/theme.service';
-import { PasswordOptions, PasswordHistoryEntry, PasswordStrength } from '../../models/password-options.model';
+import { PasswordOptions } from '../../models/password-options.model';
 import {
   calculateStrength,
   getStrengthLabel,
   getStrengthPercent,
 } from '../../utils/password-strength.util';
+import { PasswordHistoryEntry } from 'src/app/models/password-history-entry.model';
+import { PasswordStrength } from 'src/app/models/password-strength.model';
 
 interface CharOption {
   key: keyof Pick<PasswordOptions, 'includeUppercase' | 'includeLowercase' | 'includeNumbers' | 'includeSpecial'>;
