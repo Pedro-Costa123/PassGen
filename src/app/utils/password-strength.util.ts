@@ -1,4 +1,4 @@
-import { PasswordStrength } from '../models/password-options.model';
+import { PasswordStrength } from '../models/password-strength.model';
 
 /**
  * Calculates password strength based on length and character diversity.
