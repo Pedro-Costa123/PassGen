@@ -1,4 +1,4 @@
-import { PasswordStrength } from './password-strength.model';
+import { PasswordStrength } from "./password-strength.model";
 
 export interface PasswordHistoryEntry {
   password: string;
