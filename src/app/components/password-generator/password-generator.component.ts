@@ -54,9 +54,9 @@ export class PasswordGeneratorComponent implements OnInit {
   );
 
   readonly charOptions: CharOption[] = [
-    { key: "includeUppercase", label: "Uppercase", example: "A–Z" },
-    { key: "includeLowercase", label: "Lowercase", example: "a–z" },
-    { key: "includeNumbers", label: "Numbers", example: "0–9" },
+    { key: "includeUppercase", label: "Uppercase", example: "A-Z" },
+    { key: "includeLowercase", label: "Lowercase", example: "a-z" },
+    { key: "includeNumbers", label: "Numbers", example: "0-9" },
     { key: "includeSpecial", label: "Special", example: "!@#$%" },
   ];
 
