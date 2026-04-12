@@ -8,10 +8,6 @@ const SPECIAL = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
 @Injectable({ providedIn: "root" })
 export class PasswordService {
-  /**
-   * Builds the character pool from selected options, removing ignored characters.
-   * Returns an empty string if the pool is empty after filtering.
-   */
   buildCharPool(options: PasswordOptions): string {
     let pool = "";
     if (options.includeUppercase) pool += UPPERCASE;
@@ -30,15 +26,10 @@ export class PasswordService {
     return pool;
   }
 
-  /**
-   * Generates a cryptographically secure random password.
-   * Returns null if the character pool is empty (impossible to generate).
-   */
   generatePassword(options: PasswordOptions): string | null {
     const pool = this.buildCharPool(options);
     if (!pool.length) return null;
 
-    // Use crypto.getRandomValues for secure randomness
     const bytes = new Uint32Array(options.length);
     crypto.getRandomValues(bytes);
 

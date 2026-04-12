@@ -18,13 +18,7 @@ import { PasswordHistoryEntry } from "src/app/models/password-history-entry.mode
 import { PasswordStrength } from "src/app/models/password-strength.model";
 
 interface CharOption {
-  key: keyof Pick<
-    PasswordOptions,
-    | "includeUppercase"
-    | "includeLowercase"
-    | "includeNumbers"
-    | "includeSpecial"
-  >;
+  key: "includeUppercase" | "includeLowercase" | "includeNumbers" | "includeSpecial";
   label: string;
   example: string;
 }
@@ -79,7 +73,6 @@ export class PasswordGeneratorComponent implements OnInit {
       ignoreChars: [""],
     });
 
-    // Generate a password immediately so the UI is populated on load
     this.generatePassword();
   }
 

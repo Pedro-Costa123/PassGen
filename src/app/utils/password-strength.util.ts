@@ -1,27 +1,15 @@
 import { PasswordStrength } from "../models/password-strength.model";
 
-/**
- * Calculates password strength based on length and character diversity.
- *
- * Scoring:
- *   Length  >= 20 → +3 | >= 16 → +2 | >= 12 → +1 | < 12 → +0
- *   Diversity (unique char classes present): score += (classes - 1), clamped 0..3
- *
- * Final score → strength:
- *   0-1 → weak | 2-3 → moderate | 4-5 → strong | 6+ → very-strong
- */
 export function calculateStrength(password: string): PasswordStrength {
   if (!password || password.length < 4) return "weak";
 
   const len = password.length;
   let score = 0;
 
-  // Length score
   if (len >= 20) score += 3;
   else if (len >= 16) score += 2;
   else if (len >= 12) score += 1;
 
-  // Diversity score
   let diversity = 0;
   if (/[A-Z]/.test(password)) diversity++;
   if (/[a-z]/.test(password)) diversity++;
