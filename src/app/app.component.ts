@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { PasswordGeneratorComponent } from "./components/password-generator/password-generator.component";
 
 @Component({
@@ -6,6 +6,7 @@ import { PasswordGeneratorComponent } from "./components/password-generator/pass
   standalone: true,
   imports: [PasswordGeneratorComponent],
   template: `<app-password-generator />`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [],
 })
 export class AppComponent {}

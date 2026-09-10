@@ -1,4 +1,10 @@
-import { Component, OnInit, computed, signal } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  computed,
+  signal,
+} from "@angular/core";
 import {
   ReactiveFormsModule,
   FormBuilder,
@@ -14,8 +20,8 @@ import {
   getStrengthLabel,
   getStrengthPercent,
 } from "../../utils/password-strength.util";
-import { PasswordHistoryEntry } from "src/app/models/password-history-entry.model";
-import { PasswordStrength } from "src/app/models/password-strength.model";
+import { PasswordHistoryEntry } from "../../models/password-history-entry.model";
+import { PasswordStrength } from "../../models/password-strength.model";
 
 interface CharOption {
   key: "includeUppercase" | "includeLowercase" | "includeNumbers" | "includeSpecial";
@@ -28,6 +34,7 @@ interface CharOption {
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: "./password-generator.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: "./password-generator.component.scss",
 })
 export class PasswordGeneratorComponent implements OnInit {

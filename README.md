@@ -1,6 +1,6 @@
 # PassGen — Secure Password Generator
 
-An Angular single-page application for generating secure, configurable passwords entirely in the browser.
+An Angular 22 single-page application for generating secure, configurable passwords entirely in the browser.
 
 ---
 
@@ -19,8 +19,8 @@ An Angular single-page application for generating secure, configurable passwords
 
 ### Prerequisites
 
-- Node.js 18+ and npm
-- Angular CLI
+- Node.js 22.22.3+, 24.15.0+, or 26.x (within those major versions), and npm
+- Angular CLI 22 (installed locally with the project dependencies)
 
 ### Install & Run
 
@@ -66,7 +66,7 @@ src/
     └── components/
         └── password-generator/
             ├── password-generator.component.ts    # Main component logic (signals, reactive forms)
-            ├── password-generator.component.html  # Template (Angular 21 control flow)
+            ├── password-generator.component.html  # Template (Angular 22 control flow)
             └── password-generator.component.scss  # Component styles (CSS variables)
 ```
 
